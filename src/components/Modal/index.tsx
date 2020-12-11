@@ -1,0 +1,40 @@
+import React from 'react';
+
+import Input from '../Input';
+import Text from '../TextArea';
+
+import {
+    IoIosClose
+} from 'react-icons/io';
+
+
+import { 
+    Container,
+    Card, 
+    BtnDelet,
+    Title,
+    Content
+} from './styles';
+
+interface IModalProps{
+    closemodal(): void;
+};
+
+const Modal: React.FC<IModalProps> = ({closemodal}) => {
+  return (
+      <Container >
+        <Card>
+            <BtnDelet onClick={closemodal}>
+                <IoIosClose/>
+            </BtnDelet>
+            <Content>
+                <Input autoFocus />
+                <Text/>
+            </Content>
+            
+        </Card>
+      </Container>
+  );
+}
+
+export default Modal;
