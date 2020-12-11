@@ -12,7 +12,7 @@ import {
     Container,
     Card, 
     BtnDelet,
-    Title,
+    
     Content
 } from './styles';
 

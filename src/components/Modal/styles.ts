@@ -46,11 +46,6 @@ export const BtnDelet = styled.button`
     font: 900 35px Roboto;
 `;
 
-export const Title = styled.h2`
-    color: ${props => props.theme.colors.blue};
-    font: 700 25px Roboto;
-`;
-
 export const Content = styled.div`
 
 `;
