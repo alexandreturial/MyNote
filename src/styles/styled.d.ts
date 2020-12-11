@@ -18,7 +18,7 @@ declare module 'styled-components'{
             purpleSecundary: string,
             blue: string,
         
-
+            sucess: string,
             warning: string,
         },    
     }

@@ -10,10 +10,11 @@ export default {
         balck:'#000',
         gray:'#AFB1BF',
         brown:'#765C77',
-        purplePrimary: '#5532A7',
-        purpleSecundary: '#9A67C2',
+        purplePrimary: '#7a46c1',
+        purpleSecundary: '#a35bcc',
         blue:'#6559d8',
         
+        sucess: '#2ae8b3',
         warning:'#ef3fb5',
        
     },

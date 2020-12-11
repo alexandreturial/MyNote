@@ -1,10 +1,12 @@
 import React from 'react';
 
+import CardTask from '../TaskCard';
+
 import {
     Container,
     TaskCount,
     TaskCountItem,
-   
+    DailyTask
 
 } from './styles';
 
@@ -37,7 +39,12 @@ const Content: React.FC = () => {
                     </h4>
                 </TaskCountItem>
             </TaskCount>
-
+            <DailyTask>
+                <CardTask/>
+                <CardTask/>
+                <CardTask/>
+                <CardTask/>
+            </DailyTask>
         </Container>
     );
 }

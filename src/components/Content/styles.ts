@@ -10,7 +10,7 @@ export const Container = styled.main`
 `;
 
 export const TaskCount = styled.div`
-    width: 300px;
+    width: 85vw;
     height: 65px;
 
     display:flex;
@@ -24,7 +24,9 @@ export const TaskCount = styled.div`
     
     
 `;
+
 export const TaskCountItem = styled.div`
+
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -40,4 +42,8 @@ export const TaskCountItem = styled.div`
     h4{
         font: 300 15px Roboto;
     }
+`;
+
+export const DailyTask = styled.main`
+    
 `;

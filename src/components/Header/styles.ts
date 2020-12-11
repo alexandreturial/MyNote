@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
     width: 100vw;
-    height: 30vh;
+    height: 20vh;
    
     display:flex;
    
@@ -12,7 +12,7 @@ export const Container = styled.header`
         top:0;
         left:0;
         width: 100vw;
-        height: 30vh;
+        height: 20vh;
 
         background: ${props => props.theme.colors.blue};
         border-radius: 0 0 30% 30%/ 0 0 15% 15%;

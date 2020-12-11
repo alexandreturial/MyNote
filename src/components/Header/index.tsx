@@ -5,7 +5,7 @@ import { Container,
     Title, 
     Subtitle
    
-} from './styles';
+} from './styles';  
 
 const Header: React.FC = () => {
     return (
