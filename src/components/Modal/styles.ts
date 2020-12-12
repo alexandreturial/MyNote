@@ -36,7 +36,7 @@ export const BtnDelet = styled.button`
 
     display:flex;
 
-    margin: -40px auto 40px auto;
+    margin: -40px auto 0 auto;
     
     background: ${props => props.theme.colors.warning};
     box-shadow: 0px 3px 4px  ${props => props.theme.colors.warning}cc;
@@ -65,4 +65,6 @@ export const Form = styled.form`
     flex-direction:column;
 
     align-items: flex-end;
+    justify-items: baseline;
+    height: 100%
 `;
