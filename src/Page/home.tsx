@@ -7,10 +7,13 @@ import Footer from '../components/Footer';
 // import { Container } from './styles';
 
 const Home: React.FC = () => {
+
+    let tasks = localStorage.getItem('@my-task:') !== null ? localStorage.getItem('@my-task:') : null;
+   
   return (
       <div>
         <Header/>
-        <Content/>
+        <Content task={tasks || '[]'}/>
         <Footer/>
       </div>
   );

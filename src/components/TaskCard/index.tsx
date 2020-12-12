@@ -10,11 +10,15 @@ import {
   BtnFinish
 } from './styles';
 
-const TaskCard: React.FC = () => {
+interface ITaskCardProps{
+  TitleTask:string;
+}
+
+const TaskCard: React.FC<ITaskCardProps> = ({TitleTask}) => {
   return (
       <Container>
           <Title>
-            Task 1
+            {TitleTask}
           </Title>
           <BtnFinish>
             <GoCheck/>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 
 import CardTask from '../TaskCard';
 
@@ -10,7 +10,12 @@ import {
 
 } from './styles';
 
-const Content: React.FC = () => {
+interface IContentProps{
+    task: string
+}
+const Content: React.FC<IContentProps> = ({task}) => {
+    const data = JSON.parse(task);
+    
     return (
         <Container>
             <TaskCount>
@@ -40,10 +45,22 @@ const Content: React.FC = () => {
                 </TaskCountItem>
             </TaskCount>
             <DailyTask>
-                <CardTask/>
-                <CardTask/>
-                <CardTask/>
-                <CardTask/>
+                {   
+                    data !== '' ? 
+                        data.map((indicator) => (
+                            <CardTask 
+                                key={indicator.Key}
+                                TitleTask={indicator.Title}
+                            />
+                        ))
+                    :
+                        
+                        <h1>
+                            ola
+                        </h1>
+                        
+                }
+            
             </DailyTask>
         </Container>
     );

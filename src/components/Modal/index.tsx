@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import Input from '../Input';
 import Text from '../TextArea';
@@ -13,7 +13,7 @@ import {
     Card, 
     BtnDelet,
     BtnSubmit,
-    Content
+    Form
 } from './styles';
 
 interface IModalProps{
@@ -21,20 +21,53 @@ interface IModalProps{
 };
 
 const Modal: React.FC<IModalProps> = ({closemodal}) => {
-  return (
+    const [title, setTitle] = useState<string>('');
+    const [description, setDescription] = useState<string>('');
+    let tasks;
+    const addTask = (e) =>{
+        
+        let value = 
+            {
+                Title: title, 
+                Description: description,
+                Key: Date.now()
+            }
+        ;
+        
+        tasks = localStorage.getItem('@my-task:') ? localStorage.getItem('@my-task:') : null;
+        
+        if(tasks !== null){
+            tasks = JSON.parse(tasks);
+            tasks = [...tasks, value];
+        }else{
+            tasks = [value];
+        }
+       
+        localStorage.setItem('@my-task:', JSON.stringify(tasks));
+        
+    };
+
+    return (
       <Container >
         <Card>
             <BtnDelet onClick={closemodal}>
                 <IoIosClose/>
             </BtnDelet>
-            <Content>
-                <Input autoFocus placeholder="Task Title"/>
-                <Text placeholder="Task Description" />
+            <Form onSubmit={addTask} >
+                <Input 
+                    autoFocus 
+                    placeholder="Task Title"
+                    onChange={e => setTitle(e.target.value)}
+                />
+                <Text 
+                    placeholder="Task Description"
+                    onChange={e => setDescription(e.target.value)} 
+                />
 
-                <BtnSubmit>
+                <BtnSubmit type="submit">
                     Save
                 </BtnSubmit>
-            </Content>
+            </Form>
             
         </Card>
       </Container>

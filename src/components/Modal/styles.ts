@@ -60,7 +60,7 @@ export const BtnSubmit = styled.button`
     font: 900 18px Roboto;
 `;
 
-export const Content = styled.div`
+export const Form = styled.form`
     display: flex;
     flex-direction:column;
 
