@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.main`
     width: 100vw;
-    height: 70vh;
+    height: 75vh;
    
     display:flex;
     flex-direction: column;
@@ -16,7 +16,7 @@ export const TaskCount = styled.div`
     display:flex;
 
     
-    margin: -32.5px auto 32.5px auto;
+    margin: -25px auto 32.5px auto;
     
     background: ${props => props.theme.colors.white};
     border-radius: 7px;

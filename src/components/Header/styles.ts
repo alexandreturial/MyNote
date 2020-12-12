@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
     width: 100vw;
-    height: 20vh;
+    height: 15vh;
    
     display:flex;
 
@@ -13,10 +13,8 @@ export const Container = styled.header`
 export const Section = styled.section`
     position: relative;
     
-
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: start;
 
     padding: 15px;
