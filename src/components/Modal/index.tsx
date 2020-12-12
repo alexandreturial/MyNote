@@ -29,7 +29,7 @@ const Modal: React.FC<IModalProps> = ({closemodal}) => {
             </BtnDelet>
             <Content>
                 <Input autoFocus placeholder="Task Title"/>
-                <Text placeholder="Task Description" rows={10}/>
+                <Text placeholder="Task Description" />
 
                 <BtnSubmit>
                     Save
