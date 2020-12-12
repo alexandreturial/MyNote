@@ -12,7 +12,7 @@ import {
     Container,
     Card, 
     BtnDelet,
-    
+    BtnSubmit,
     Content
 } from './styles';
 
@@ -28,8 +28,12 @@ const Modal: React.FC<IModalProps> = ({closemodal}) => {
                 <IoIosClose/>
             </BtnDelet>
             <Content>
-                <Input autoFocus />
-                <Text/>
+                <Input autoFocus placeholder="Task Title"/>
+                <Text placeholder="Task Description" rows={10}/>
+
+                <BtnSubmit>
+                    Save
+                </BtnSubmit>
             </Content>
             
         </Card>

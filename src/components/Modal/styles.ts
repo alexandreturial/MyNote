@@ -18,7 +18,7 @@ export const Container = styled.div`
 
 export const Card = styled.div`
     width: 70vw;
-    height: 40vh;
+    height: 60vh;
 
     border-radius: 10px;
 
@@ -46,6 +46,23 @@ export const BtnDelet = styled.button`
     font: 900 35px Roboto;
 `;
 
-export const Content = styled.div`
+export const BtnSubmit = styled.button`
+    padding: 9px 15px;
+    border-radius: 25px;
 
+    display:flex;
+    align-items: flex-end;
+
+    background-image: linear-gradient(to right, ${props => props.theme.colors.purplePrimary}, ${props => props.theme.colors.purpleSecundary});
+
+    color: ${props => props.theme.colors.white};
+
+    font: 900 18px Roboto;
+`;
+
+export const Content = styled.div`
+    display: flex;
+    flex-direction:column;
+    
+    align-items: flex-end;
 `;

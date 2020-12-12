@@ -11,4 +11,8 @@ export const Container = styled.input`
     color: ${props => props.theme.colors.blue};
     font: 700 25px Roboto;
 
+    ::placeholder{
+        color: ${props => props.theme.colors.blue}7d;
+    }
+
 `;
