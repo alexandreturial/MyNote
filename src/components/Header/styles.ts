@@ -5,24 +5,14 @@ export const Container = styled.header`
     height: 20vh;
    
     display:flex;
-   
-    ::before{
-        content:'';
-        position: absolute;
-        top:0;
-        left:0;
-        width: 100vw;
-        height: 20vh;
 
-        background: ${props => props.theme.colors.blue};
-        border-radius: 0 0 30% 30%/ 0 0 15% 15%;
-       // transform: scalex(1.5);
-       
-    }
+    background: ${props => props.theme.colors.blue};
+    border-radius: 0 0 30% 30%/ 0 0 15% 15%;
+
 `;
 export const Section = styled.section`
     position: relative;
-    z-index: 1;
+    
 
     display: flex;
     flex-direction: column;

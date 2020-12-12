@@ -15,7 +15,7 @@ export const TaskCount = styled.div`
 
     display:flex;
 
-    z-index: 5;
+    
     margin: -32.5px auto 32.5px auto;
     
     background: ${props => props.theme.colors.white};
