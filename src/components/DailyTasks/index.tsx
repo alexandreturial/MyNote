@@ -7,10 +7,10 @@ import taskImg from '../../styles/task.jpg';
 
 
 interface IDailyTasksProps{
-    tasks: {
+    tasks?: {
         Key: number;
         Title: string
-    }[]
+    }[] 
 }
 
 const DailyTasks: React.FC<IDailyTasksProps> = ({tasks}) => {
@@ -18,7 +18,7 @@ const DailyTasks: React.FC<IDailyTasksProps> = ({tasks}) => {
   return (
     <DailyTask>
         {   
-            tasks.length > 1 ?
+            tasks ?
             tasks.map((indicator) => (
                 
                     <CardTask 

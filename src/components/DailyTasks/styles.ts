@@ -14,4 +14,6 @@ export const Img = styled.div`
     span{
         font: 300 28px Roboto;
     }
+
+    
 `;
