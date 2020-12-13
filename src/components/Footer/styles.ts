@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.footer`
+    
     grid-area: FT;
     width: 100%;
     height: 100%;
    
+    
+
     display:flex;
     align-items: end;
     justify-content: space-between;
@@ -18,7 +21,8 @@ export const  ItemNavegation = styled.div`
     align-items:center;
     justify-content: center;
 
-    padding: 10px 80px;
+    padding: 15px 40px; 
+    
     color: ${props => props.theme.colors.blue}7d; 
     font: 900 30px Roboto;
 

@@ -9,7 +9,7 @@ export default createGlobalStyle `
     }
 
     html, body, #root{
-        height: 100%;
+        
         font-family: Roboto;
         background: ${props => props.theme.colors.primary};
     }

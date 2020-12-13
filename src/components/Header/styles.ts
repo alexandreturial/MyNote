@@ -8,19 +8,17 @@ export const Container = styled.header`
     display:flex;
     flex-direction:column;
     
-    background: ${props => props.theme.colors.blue};
-    border-radius: 0 0 30% 30%/ 0 0 15% 15%;
+    
 
 `;
 export const Section = styled.section`
-    position: relative;
-    
     display: flex;
     flex-direction: column;
     align-items: start;
 
     padding: 15px 15px 35px 15px;
-
+    background: ${props => props.theme.colors.blue};
+    border-radius: 0 0 30% 30%/ 0 0 15% 15%;
 `;
 
 
