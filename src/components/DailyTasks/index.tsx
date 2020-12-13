@@ -1,7 +1,10 @@
 import React from 'react';
 
-import { DailyTask } from './styles';
+import { DailyTask, Img } from './styles';
 import CardTask from '../TaskCard';
+
+import taskImg from '../../styles/task.jpg';
+
 
 interface IDailyTasksProps{
     tasks: {
@@ -11,9 +14,11 @@ interface IDailyTasksProps{
 }
 
 const DailyTasks: React.FC<IDailyTasksProps> = ({tasks}) => {
+  
   return (
     <DailyTask>
         {   
+            tasks.length > 1 ?
             tasks.map((indicator) => (
                 
                     <CardTask 
@@ -21,6 +26,15 @@ const DailyTasks: React.FC<IDailyTasksProps> = ({tasks}) => {
                         TitleTask={indicator.Title}
                     />
                 ))
+            :
+                <Img>
+                    <img src={taskImg} alt=""/>
+                    <h1>
+                        No Tasks,<br/>
+                        <span>add your task.</span>
+                    </h1>
+                </Img>
+                
         }
     </DailyTask>
   );
