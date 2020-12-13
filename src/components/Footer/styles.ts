@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.footer`
-    width: 100vw;
-    height: 10vh;
+    grid-area: FT;
+    width: 100%;
+    height: 100%;
    
     display:flex;
     align-items: end;
     justify-content: space-between;
 
     background: ${props => props.theme.colors.white};
-
     box-shadow: 0px -3px 4px  ${props => props.theme.colors.gray}7d;
 `;
 
@@ -18,9 +18,9 @@ export const  ItemNavegation = styled.div`
     align-items:center;
     justify-content: center;
 
-    padding: 15px 30px;
+    padding: 10px 80px;
     color: ${props => props.theme.colors.blue}7d; 
-    font: 900 35px Roboto;
+    font: 900 30px Roboto;
 
     cursor: pointer;
 

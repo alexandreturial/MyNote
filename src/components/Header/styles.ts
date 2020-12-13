@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-    width: 100vw;
-    height: 15vh;
+    grid-area: MH;
+    width: 100%;
+    height: 100%;
    
     display:flex;
 
@@ -17,7 +18,7 @@ export const Section = styled.section`
     flex-direction: column;
     align-items: start;
 
-    padding: 15px;
+    padding: 15px 15px 35px 15px;
 
 `;
 

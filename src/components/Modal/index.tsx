@@ -25,11 +25,12 @@ const Modal: React.FC<IModalProps> = ({closemodal}) => {
     const [description, setDescription] = useState<string>('');
     let tasks;
     const addTask = (e) =>{
-        
+        let date = new Date();
         let value = 
             {
                 Title: title, 
                 Description: description,
+                Data: date.getDate() +'/'+ date.getMonth() +'/'+ date.getFullYear(),
                 Key: Date.now()
             }
         ;
