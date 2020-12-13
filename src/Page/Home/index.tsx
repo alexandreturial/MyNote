@@ -1,9 +1,8 @@
 import React from 'react';
 
-import CountTask from '../components/CounterTask';
-import Dailytasks from '../components/DailyTasks';
+import Dailytasks from '../../components/DailyTasks';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 
 const Home: React.FC = () => {
@@ -22,10 +21,9 @@ const Home: React.FC = () => {
   }
   
   return (
-    <>
-       <CountTask task={data.length} daily={DailyTaskCount} finish={4}/>
-        <Dailytasks tasks={data}/>
-    </>
+    <Container>
+      <Dailytasks tasks={data}/>
+    </Container>
   );
 }
 

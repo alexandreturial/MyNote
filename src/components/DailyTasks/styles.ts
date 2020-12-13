@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-export const DailyTask = styled.main`
+export const DailyTask = styled.div`
     
 `;

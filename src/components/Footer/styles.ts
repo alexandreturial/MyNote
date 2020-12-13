@@ -34,7 +34,7 @@ export const  ButtonNewTask = styled.button`
     
     margin-top: -25px;
     padding: 8px;
-
+    z-index:2;
     border-radius: 50%;
 
     background-image: linear-gradient(${props => props.theme.colors.purplePrimary}, ${props => props.theme.colors.purpleSecundary});

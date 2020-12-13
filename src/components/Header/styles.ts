@@ -6,7 +6,8 @@ export const Container = styled.header`
     height: 100%;
    
     display:flex;
-
+    flex-direction:column;
+    
     background: ${props => props.theme.colors.blue};
     border-radius: 0 0 30% 30%/ 0 0 15% 15%;
 

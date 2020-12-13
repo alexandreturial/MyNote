@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Layout from '../components/Layout';
 
-import Home from '../Page/home';
+import Home from '../Page/Home';
 
 
 const Routes: React.FC = () => {

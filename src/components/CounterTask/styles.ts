@@ -4,7 +4,8 @@ import styled from 'styled-components';
 export const TaskCount = styled.div`
     width: 70%;
     height: 65px;
-
+    
+    z-index:2;
     display:flex;
     
     margin: -2% auto 1% auto;

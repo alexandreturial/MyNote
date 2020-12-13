@@ -21,11 +21,10 @@ export const Container = styled.div`
         width: 10px;
         height: 35px;
 
-        position: absolute;
-
         background: ${props => props.theme.colors.warning};
 
     }
+    
 
     &:hover{
         opacity: .7;
@@ -38,6 +37,8 @@ export const Title = styled.div`
     margin-left: 20px;
 
     font: 700 18px Roboto;
+    
+    
 `;
 
 export const BtnFinish = styled.button`
