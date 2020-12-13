@@ -47,6 +47,12 @@ export const Form = styled.form`
     justify-content: center;
 
     width: 100%;
+    
+    margin-top: 50%;
+
+    @media(min-width: 700px){
+        margin-top: 20%;
+    }
 
     input{
         border-bottom: 1px solid ${props => props.theme.colors.blue};
@@ -67,8 +73,7 @@ export const Main = styled.main`
     background: ${props => props.theme.colors.white};
     border-radius:  60% 60% 0 0/ 25% 25% 0 0;
 
-    padding-top: 30%;
-
+    
     
 `;
 
