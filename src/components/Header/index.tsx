@@ -11,7 +11,8 @@ import CountTask from '../CounterTask';
 
 const Header: React.FC = () => {
     let tasks = localStorage.getItem('@my-task:') !== null ? localStorage.getItem('@my-task:') : null;
-  
+    const user = localStorage.getItem('@my-task-login:') !== null ? localStorage.getItem('@my-task-login:') : null;
+
     const data = tasks  !== null ?  JSON.parse(tasks) : [];
     
     let DailyTaskCount =0;
@@ -27,8 +28,8 @@ const Header: React.FC = () => {
     return (
         <Container>
             <Section>
-                <Title>Hi (user name),</Title>
-                <Subtitle>today you have 5 taks</Subtitle>
+                <Title>Hi {user},</Title>
+                <Subtitle>today you have {data.length} taks</Subtitle>
             </Section>
             <CountTask task={data.length} daily={DailyTaskCount} finish={4}/>
 

@@ -5,13 +5,13 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Layout from '../components/Layout';
 
 import Home from '../Page/Home';
+import Login from '../Page/Login';
+
 
 const Routes: React.FC = () => {
   return (
     <BrowserRouter>
-        <Layout>
-            <Route path="/" exact component={Home}/>
-        </Layout>
+        <Route path="/" exact component={Login}/>
     </BrowserRouter>
   );
 }
