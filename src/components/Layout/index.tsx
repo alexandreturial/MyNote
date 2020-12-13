@@ -10,13 +10,12 @@ import {
 } from './styles';
 
 const Layout: React.FC = ({children}) => {
-    let tasks = localStorage.getItem('@my-task:') !== null ? localStorage.getItem('@my-task:') : null;
 
 
   return (
         <Container>
             <Header/>
-            <Content task={tasks || '[]'}>
+            <Content >
                 {children}
             </Content>
             <Footer/>

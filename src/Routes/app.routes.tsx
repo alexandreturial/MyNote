@@ -1,9 +1,20 @@
-import React from 'react';
+import React, {} from 'react';
 
-// import { Container } from './styles';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import Layout from '../components/Layout';
+
+import Home from '../Page/home';
+
 
 const Routes: React.FC = () => {
-  return <div />;
+  return (
+    <BrowserRouter>
+        <Layout>
+            <Route path="/" exact component={Home}/>
+        </Layout>
+    </BrowserRouter>
+  );
 }
 
 export default Routes;

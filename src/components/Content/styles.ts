@@ -10,6 +10,4 @@ export const Container = styled.main`
    
 `;
 
-export const DailyTask = styled.main`
-    
-`;
+
