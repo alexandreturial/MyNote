@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  GoCheck
+  GoTrashcan
 } from 'react-icons/go';
 
 import { 
@@ -12,16 +12,22 @@ import {
 
 interface ITaskCardProps{
   TitleTask:string;
+  index: number;
+  delet(number):void;
 }
 
-const TaskCard: React.FC<ITaskCardProps> = ({TitleTask}) => {
+const TaskCard: React.FC<ITaskCardProps> = ({TitleTask, index, delet}) => {
+  const del = (key: number) => {
+    delet(key)
+  }
+  
   return (
       <Container>
           <Title>
             {TitleTask}
           </Title>
-          <BtnFinish>
-            <GoCheck/>
+          <BtnFinish onClick={() => del(index)}>
+            <GoTrashcan/>
           </BtnFinish>
       </Container>
   );

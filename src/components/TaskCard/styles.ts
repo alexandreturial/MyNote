@@ -14,7 +14,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    cursor: pointer;
+    
     
     ::before{
         content:'';
@@ -26,10 +26,7 @@ export const Container = styled.div`
     }
     
 
-    &:hover{
-        opacity: .7;
-        transform: translateX(10px);
-    }
+   
 `;
 
 
@@ -37,8 +34,8 @@ export const Title = styled.div`
     margin-left: 20px;
 
     font: 700 18px Roboto;
-    
-    
+    cursor: pointer;
+   
 `;
 
 export const BtnFinish = styled.button`
@@ -50,4 +47,5 @@ export const BtnFinish = styled.button`
     font: 500 18px Roboto;
 
     right:0;
+    cursor: pointer;
 `;  

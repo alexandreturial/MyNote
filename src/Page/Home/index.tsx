@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Dailytasks from '../../components/DailyTasks';
+
+import { getTasks, DeletTasks } from '../../Repositorie/tasks';
 
 import { Container } from './styles';
 
 
 const Home: React.FC = () => {
+  let tasks = getTasks();
 
-  let tasks = localStorage.getItem('@my-task:') !== null ? localStorage.getItem('@my-task:') : null;
+  const [task, setTask] = useState(tasks);
   
-  const data = tasks  !== null ?  JSON.parse(tasks) : null;
- 
+  
+  const deletItem = (key) => {
+    const newTasks = DeletTasks(key)
+    setTask(newTasks);
+  }
   
   
   return (
     <Container>
-      <Dailytasks tasks={data}/>
+      <Dailytasks tasks={task} del={deletItem}/>
     </Container>
   );
 }

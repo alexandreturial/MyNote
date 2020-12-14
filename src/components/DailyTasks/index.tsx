@@ -10,11 +10,14 @@ interface IDailyTasksProps{
     tasks?: {
         Key: number;
         Title: string
-    }[] 
+    }[],
+    del(number):void;
 }
 
-const DailyTasks: React.FC<IDailyTasksProps> = ({tasks}) => {
-  
+const DailyTasks: React.FC<IDailyTasksProps> = ({tasks, del}) => {
+    const deletItem = (key) => {
+        del(key);
+    }
   return (
     <DailyTask>
         {   
@@ -24,6 +27,8 @@ const DailyTasks: React.FC<IDailyTasksProps> = ({tasks}) => {
                     <CardTask 
                         key={indicator.Key}
                         TitleTask={indicator.Title}
+                        delet={deletItem}
+                        index={indicator.Key}
                     />
                 ))
             :

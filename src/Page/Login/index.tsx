@@ -32,7 +32,7 @@ const Login: React.FC = () => {
             <img src={LogoImg} alt=""/>
         </Header>
         <Main>
-            <Form >
+            <Form onSubmit={login}>
                 <BiUser/>
                 <Input 
                     placeholder="nome do usuário"

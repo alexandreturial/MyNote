@@ -8,6 +8,8 @@ import {
 } from 'react-icons/io';
 
 
+import { addTask } from '../../Repositorie/tasks';
+
 import { 
     Container,
     Card, 
@@ -23,8 +25,8 @@ interface IModalProps{
 const Modal: React.FC<IModalProps> = ({closemodal}) => {
     const [title, setTitle] = useState<string>('');
     const [description, setDescription] = useState<string>('');
-    let tasks;
-    const addTask = (e) =>{
+    
+    const newTask = () =>{
         let date = new Date();
         let value = 
             {
@@ -35,17 +37,7 @@ const Modal: React.FC<IModalProps> = ({closemodal}) => {
             }
         ;
         
-        tasks = localStorage.getItem('@my-task:') ? localStorage.getItem('@my-task:') : null;
-        
-        if(tasks !== null){
-            tasks = JSON.parse(tasks);
-            tasks = [...tasks, value];
-        }else{
-            tasks = [value];
-        }
-       
-        localStorage.setItem('@my-task:', JSON.stringify(tasks));
-        
+        addTask(value);
     };
 
     return (
@@ -54,7 +46,7 @@ const Modal: React.FC<IModalProps> = ({closemodal}) => {
             <BtnDelet onClick={closemodal}>
                 <IoIosClose/>
             </BtnDelet>
-            <Form onSubmit={addTask} >
+            <Form onSubmit={() => newTask()} >
                 <Input 
                     autoFocus 
                     placeholder="Task Title"
