@@ -28,7 +28,7 @@ const Login: React.FC = () => {
             <img src={LogoImg} alt=""/>
         </Header>
         <Main>
-            <Form onSubmit={()=> signIn(user)}>
+            <Form onSubmit={()=> signIn(user)} name="login">
                 <div>
                     <BiUser/>
                     <Input 

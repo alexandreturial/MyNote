@@ -12,7 +12,7 @@ const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
 const AuthProvider: React.FC = ({ children }) => {
     const [logged, setLogged] = useState<boolean>(() =>{
-        const isLogged = localStorage.getItem('@my-note:logged')
+        const isLogged = localStorage.getItem('@my-task:logged')
     
         return !!isLogged;
     });

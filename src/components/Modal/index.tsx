@@ -46,7 +46,7 @@ const Modal: React.FC<IModalProps> = ({closemodal}) => {
             <BtnDelet onClick={closemodal}>
                 <IoIosClose/>
             </BtnDelet>
-            <Form onSubmit={() => newTask()} >
+            <Form onSubmit={() => newTask()} name="newTask">
                 <Input 
                     autoFocus 
                     placeholder="Task Title"
@@ -57,7 +57,7 @@ const Modal: React.FC<IModalProps> = ({closemodal}) => {
                     onChange={e => setDescription(e.target.value)} 
                 />
 
-                <BtnSubmit type="submit">
+                <BtnSubmit type="submit" for="newTask">
                     Save
                 </BtnSubmit>
             </Form>
