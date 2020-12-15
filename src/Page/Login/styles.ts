@@ -42,8 +42,8 @@ export const Header = styled.header`
 
 export const Form = styled.form`
     display: flex;
-    
-    align-items: baseline;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 
     width: 100%;
@@ -53,7 +53,13 @@ export const Form = styled.form`
     @media(min-width: 700px){
         margin-top: 20%;
     }
-
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        width: 100%;
+    }
     input{
         border-bottom: 1px solid ${props => props.theme.colors.blue};
         font-size: 16px;

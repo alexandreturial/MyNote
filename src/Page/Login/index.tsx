@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import Input from '../../components/Input';
 import LogoImg from '../../styles/logo.png';
 
-
+import { useAuth } from '../../Hooks/Auth';
 
 import {
     BiUser
@@ -19,11 +19,7 @@ import {
 const Login: React.FC = () => {
     const [user, setUser] = useState<string>('');
 
-    const login = () =>{
-        localStorage.setItem('@my-task-login:', user);
-        window.location.reload(); 
-    };
-
+    const { signIn } = useAuth();
 
   return (
     <Container>
@@ -32,18 +28,19 @@ const Login: React.FC = () => {
             <img src={LogoImg} alt=""/>
         </Header>
         <Main>
-            <Form onSubmit={login}>
-                <BiUser/>
-                <Input 
-                    placeholder="nome do usuário"
-                    onChange={e => setUser(e.target.value)}
-                />
+            <Form onSubmit={()=> signIn(user)}>
+                <div>
+                    <BiUser/>
+                    <Input 
+                        placeholder="nome do usuário"
+                        onChange={e => setUser(e.target.value)}
+                    />
+                </div>
+                <BtnSubmit type="submit">
+                    login
+                </BtnSubmit>
             </Form>
-            <BtnSubmit 
-                onClick={login}
-            >
-                login
-            </BtnSubmit>
+            
         </Main>
         
     </Container>

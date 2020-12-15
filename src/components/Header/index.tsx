@@ -1,19 +1,30 @@
 import React from 'react';
 
-import { Container, 
-    Section, 
-    Title, 
-    Subtitle
-   
-} from './styles';  
+import { getTasks } from '../../Repositorie/tasks';
+import { useAuth } from '../../Hooks/Auth';
+
 
 import CountTask from '../CounterTask';
 
-const Header: React.FC = () => {
-    let tasks = localStorage.getItem('@my-task:') !== null ? localStorage.getItem('@my-task:') : null;
-    const user = localStorage.getItem('@my-task-login:') !== null ? localStorage.getItem('@my-task-login:') : null;
+import { Container, 
+    Section, 
+    Title, 
+    Subtitle,
+    NavBar
+   
+} from './styles';
 
-    const data = tasks  !== null ?  JSON.parse(tasks) : [];
+
+import {
+    GiExitDoor
+} from 'react-icons/gi';
+
+const Header: React.FC = () => {
+    const user = localStorage.getItem('@my-task:user') !== null ? localStorage.getItem('@my-task:user') : null;
+    
+    const { signOut } = useAuth();
+    
+    const data = getTasks();
     
     let DailyTaskCount =0;
     let date = new Date();
@@ -27,10 +38,15 @@ const Header: React.FC = () => {
     
     return (
         <Container>
-            <Section>
-                <Title>Hi {user},</Title>
-                <Subtitle>today you have {data.length} taks</Subtitle>
-            </Section>
+            <NavBar>
+                <Section>
+                    <Title>Hi {user},</Title>
+                    <Subtitle>today you have {data.length} taks</Subtitle>
+                </Section>
+                <button onClick={signOut}>
+                    <GiExitDoor/>
+                </button>
+            </NavBar>
             <CountTask task={data.length} daily={DailyTaskCount} finish={4}/>
 
         </Container >

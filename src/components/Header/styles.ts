@@ -7,17 +7,29 @@ export const Container = styled.header`
    
     display:flex;
     flex-direction:column;
-    
-    
-
 `;
+
+export const NavBar = styled.div`
+    display: flex;
+    justify-content: space-between;
+
+    padding: 15px 15px 35px 15px;
+    background: ${props => props.theme.colors.blue};
+    border-radius: 0 0 30% 30%/ 0 0 15% 15%;
+
+    button{
+        font-size: 20px;
+        background: none;
+        color: ${props => props.theme.colors.white};
+    }
+`;
+
 export const Section = styled.section`
     display: flex;
     flex-direction: column;
     align-items: start;
 
-    padding: 15px 15px 35px 15px;
-    background: ${props => props.theme.colors.blue};
+    /* background: ${props => props.theme.colors.blue}; */
     border-radius: 0 0 30% 30%/ 0 0 15% 15%;
 `;
 

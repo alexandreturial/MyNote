@@ -1,17 +1,17 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
 
+import { useAuth } from '../Hooks/Auth';
 
 import App from './app.routes';
 import Auth from './auth.routes';
 
 
 const Routes: React.FC = () =>{
-    const  logged = localStorage.getItem('@my-task-login:') !== null ? localStorage.getItem('@my-task-login:') : null;
-   
+    const { logged } = useAuth();
     return(
         <BrowserRouter>
-            {logged !== null ? <App/> : <Auth />}
+           {logged ? <App/> : <Auth />}
         </BrowserRouter>
     );
 }
