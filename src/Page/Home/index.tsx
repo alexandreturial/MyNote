@@ -1,27 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Dailytasks from '../../components/DailyTasks';
 
-import { getTasks, DeletTasks } from '../../Repositorie/tasks';
+import { useTasks } from '../../Hooks/Tasks';
 
 import { Container } from './styles';
 
 
 const Home: React.FC = () => {
-  let tasks = getTasks();
+  const { deletTask, getAllTasks } = useTasks();
 
-  const [task, setTask] = useState(tasks);
-  
-  
   const deletItem = (key) => {
-    const newTasks = DeletTasks(key)
-    setTask(newTasks);
+    deletTask(key);
   }
-  
   
   return (
     <Container>
-      <Dailytasks tasks={task} del={deletItem}/>
+      <Dailytasks tasks={getAllTasks()} del={deletItem}/>
     </Container>
   );
 }

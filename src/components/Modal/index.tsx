@@ -10,6 +10,8 @@ import {
 
 import { addTask } from '../../Repositorie/tasks';
 
+import { useTasks } from '../../Hooks/Tasks';
+
 import { 
     Container,
     Card, 
@@ -25,8 +27,10 @@ interface IModalProps{
 const Modal: React.FC<IModalProps> = ({closemodal}) => {
     const [title, setTitle] = useState<string>('');
     const [description, setDescription] = useState<string>('');
-    
-    const newTask = () =>{
+
+    const { newTask } = useTasks();
+
+    const addTask = () =>{
         let date = new Date();
         let value = 
             {
@@ -37,7 +41,13 @@ const Modal: React.FC<IModalProps> = ({closemodal}) => {
             }
         ;
         
-        addTask(value);
+        newTask(
+            {
+                Title: value.Title, 
+                Description: value.Description,
+                Data: value.Data,
+                Key: value.Key
+            });
     };
 
     return (
@@ -46,7 +56,7 @@ const Modal: React.FC<IModalProps> = ({closemodal}) => {
             <BtnDelet onClick={closemodal}>
                 <IoIosClose/>
             </BtnDelet>
-            <Form onSubmit={() => newTask()} name="newTask">
+            <Form onSubmit={() => addTask()}>
                 <Input 
                     autoFocus 
                     placeholder="Task Title"
@@ -57,7 +67,7 @@ const Modal: React.FC<IModalProps> = ({closemodal}) => {
                     onChange={e => setDescription(e.target.value)} 
                 />
 
-                <BtnSubmit type="submit" for="newTask">
+                <BtnSubmit type="submit" >
                     Save
                 </BtnSubmit>
             </Form>

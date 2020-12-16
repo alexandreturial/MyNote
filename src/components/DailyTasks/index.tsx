@@ -8,8 +8,10 @@ import taskImg from '../../styles/task.jpg';
 
 interface IDailyTasksProps{
     tasks?: {
-        Key: number;
-        Title: string
+        Title: string, 
+        Description?: string,
+        Data?: Date,
+        Key: number
     }[],
     del(number):void;
 }

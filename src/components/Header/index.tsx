@@ -1,9 +1,8 @@
 import React from 'react';
 
-import { getTasks } from '../../Repositorie/tasks';
 import { useAuth } from '../../Hooks/Auth';
 
-
+import { useTasks } from '../../Hooks/Tasks';
 import CountTask from '../CounterTask';
 
 import { Container, 
@@ -21,15 +20,14 @@ import {
 
 const Header: React.FC = () => {
     const user = localStorage.getItem('@my-task:user') !== null ? localStorage.getItem('@my-task:user') : null;
-    
+    const { task, getAllTasks } = useTasks();
     const { signOut } = useAuth();
-    
-    const data = getTasks();
+   
     
     let DailyTaskCount =0;
     let date = new Date();
 
-    for(let i of data){
+    for(let i of getAllTasks()){
         if(date.getDate() +'/'+ date.getMonth() +'/'+ date.getFullYear() === i.Data){
             DailyTaskCount += 1;
             
@@ -41,13 +39,13 @@ const Header: React.FC = () => {
             <NavBar>
                 <Section>
                     <Title>Hi {user},</Title>
-                    <Subtitle>today you have {data.length} taks</Subtitle>
+                    <Subtitle>today you have {task.length} taks</Subtitle>
                 </Section>
                 <button onClick={signOut}>
                     <GiExitDoor/>
                 </button>
             </NavBar>
-            <CountTask task={data.length} daily={DailyTaskCount} finish={4}/>
+            <CountTask task={task.length} daily={DailyTaskCount} finish={4}/>
 
         </Container >
     );

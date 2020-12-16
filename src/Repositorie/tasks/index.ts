@@ -29,4 +29,5 @@ export const addTask = (value) => {
     }
    
     localStorage.setItem('@my-task:', JSON.stringify(tasks));
+    
 }

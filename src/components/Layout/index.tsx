@@ -4,6 +4,8 @@ import Header from '../../components/Header';
 import Content from '../../components/Content';
 import Footer from '../../components/Footer';
 
+import { TaskProvider } from '../../Hooks/Tasks';
+
 
 import { 
     Container 
@@ -14,11 +16,13 @@ const Layout: React.FC = ({children}) => {
 
   return (
         <Container>
-            <Header/>
-            <Content >
-                {children}
-            </Content>
-            <Footer/>
+            <TaskProvider>
+                <Header/>
+                <Content >
+                    {children}
+                </Content>
+                <Footer/>
+            </TaskProvider>
         </Container>
   );
 }
