@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const DailyTask = styled.div`
-    
+    width: 100%;
 `;
 
 export const Img = styled.div`

@@ -6,23 +6,21 @@ export const Container = styled.div`
 
   display: grid;
   
-  grid-template-rows: 22vh 68vh 10vh;  
+  grid-template-rows: 22vh 78vh;  
 
   grid-template-areas:
     'MH'
-    'CT'
-    'FT';
+    'CT';
   
 
   @media(min-width: 700px){
     height: 100vh;
     width: 100vw;
-    grid-template-rows: 20vh 70vh 10vh;  
+    grid-template-rows: 20vh 80vh;  
 
     grid-template-areas:
     'MH'
-    'CT'
-    'FT';
+    'CT';
   }
    
 `;

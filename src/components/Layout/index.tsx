@@ -21,7 +21,6 @@ const Layout: React.FC = ({children}) => {
                 <Content >
                     {children}
                 </Content>
-                <Footer/>
             </TaskProvider>
         </Container>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { SilderProvider } from '../../Hooks/Slider/slider';
 
 import Dailytasks from '../../components/DailyTasks';
 
@@ -16,7 +17,12 @@ const Home: React.FC = () => {
   
   return (
     <Container>
-      <Dailytasks tasks={getAllTasks()} del={deletItem}/>
+      <SilderProvider>
+        <Dailytasks tasks={getAllTasks()} del={deletItem}/>
+        <h1>OLA</h1>
+      
+        
+      </SilderProvider>
     </Container>
   );
 }

@@ -8,7 +8,7 @@ export const Container = styled.main`
     display:flex;
     flex-direction: column;
 
-    overflow-y: scroll;
+    /* overflow-y: scroll;
     
      ::-webkit-scrollbar{
         width: 10px;
@@ -21,7 +21,7 @@ export const Container = styled.main`
     ::-webkit-scrollbar-track{
         background-color:${props => props.theme.colors.primary};
         
-    } 
+    }  */
 `;
 
 
