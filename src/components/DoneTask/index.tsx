@@ -12,8 +12,7 @@ interface IDailyTasksProps{
         Description?: string,
         Data?: Date,
         Key: number
-    }[],
-    
+    }[]
 }
 
 const DailyTasks: React.FC<IDailyTasksProps> = ({tasks}) => {
@@ -26,7 +25,7 @@ const DailyTasks: React.FC<IDailyTasksProps> = ({tasks}) => {
                     <CardTask 
                         key={indicator.Key}
                         TitleTask={indicator.Title}
-                        IsdoneTask={true}
+                        IsdoneTask={false}
                         index={indicator.Key}
                     />
                 ))

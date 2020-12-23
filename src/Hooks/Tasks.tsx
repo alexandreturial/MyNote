@@ -1,6 +1,12 @@
 import React, { createContext, useState, useContext } from 'react';
 
-import { getTasks, DeletTasks, addTask } from '../Repositorie/tasks';
+import { getTasks, 
+    DeletTasks, 
+    addTask,
+    doneTasks, 
+    getDoneTasks, 
+    DeletDoneTasks 
+} from '../Repositorie/tasks';
 
 interface ITask{
     value: {
@@ -13,7 +19,8 @@ interface ITask{
 
 interface ITaskContext{
     task: ITask[];
-    deletTask(id: number): void;
+    deletTask(id: number, IsdoneTask: boolean): void;
+    doneTask(id: number): void;
     newTask(value: {
         Title: string, 
         Description: string,
@@ -21,6 +28,7 @@ interface ITaskContext{
         Key: number
     }):void;
     getAllTasks(): any;
+    getAllDoneTasks(): any;
 }
 
 const TaskContext = createContext<ITaskContext>({} as ITaskContext);
@@ -28,10 +36,17 @@ const TaskContext = createContext<ITaskContext>({} as ITaskContext);
 
 const TaskProvider: React.FC = ({ children }) => {
     const tasks = getTasks() !== null ? getTasks() : [];
+    const Donetasks = getDoneTasks() !== null ? getDoneTasks() : [];
+    
     const [task, setTask] = useState(tasks);
+    const [Donetask, setDonetask] = useState(Donetasks);
 
     const  getAllTasks = () =>{
         return task;
+    }
+
+    const  getAllDoneTasks = () =>{
+        return Donetask;
     }
 
     const newTask = (value: {
@@ -40,19 +55,31 @@ const TaskProvider: React.FC = ({ children }) => {
         Data: string,
         Key: number
     }) =>{
-        console.log(getAllTasks());
        
         addTask(value);
-        
     };
 
-    const deletTask = (key: number) => {
-        const newTasks = DeletTasks(key)
-        setTask(newTasks);
+    const deletTask = (key: number, IsdoneTask: boolean) => {
+        if(IsdoneTask){
+            const newTasks = DeletTasks(key)
+            setTask(newTasks);
+        }else{
+            const newDoneTasks =  DeletDoneTasks(key)
+            setDonetask(newDoneTasks);
+        }
+       
       }
 
+    const doneTask = (key: number) => {
+        const newTasks = doneTasks(key);
+        
+        setTask(newTasks[0]);
+        setDonetask(newTasks[1]);
+      
+    }
+
     return (
-        <TaskContext.Provider value={{task, getAllTasks, newTask, deletTask}}>
+        <TaskContext.Provider value={{task, getAllTasks, newTask, deletTask, doneTask, getAllDoneTasks}}>
             {children}
         </TaskContext.Provider>
     )

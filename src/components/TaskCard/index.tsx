@@ -1,35 +1,52 @@
 import React from 'react';
+import { useTasks } from '../../Hooks/Tasks';
 
 import {
-  GoTrashcan
+  GoTrashcan,
+  GoCheck
 } from 'react-icons/go';
 
-import { 
+import {
   Container,
   Title,
   BtnFinish
 } from './styles';
 
-interface ITaskCardProps{
-  TitleTask:string;
+interface ITaskCardProps {
+  TitleTask: string;
   index: number;
-  delet(number):void;
+  IsdoneTask: boolean;
 }
 
-const TaskCard: React.FC<ITaskCardProps> = ({TitleTask, index, delet}) => {
-  const del = (key: number) => {
-    delet(key)
+const TaskCard: React.FC<ITaskCardProps> = ({ TitleTask, index, IsdoneTask }) => {
+  const { deletTask, doneTask } = useTasks();
+  const del = (key: number, IsdoneTask: boolean) => {
+    deletTask(key, IsdoneTask)
   }
-  
+
+  const done = (key: number) => {
+    doneTask(key);
+
+  }
   return (
-      <Container>
-          <Title>
-            {TitleTask}
-          </Title>
-          <BtnFinish onClick={() => del(index)}>
-            <GoTrashcan/>
+    <Container>
+      <Title>
+        {TitleTask}
+      </Title>
+      <div>
+        {
+          IsdoneTask &&
+          <BtnFinish ischeck={true} onClick={() => done(index)}>
+            <GoCheck />
           </BtnFinish>
-      </Container>
+
+        }
+
+        <BtnFinish onClick={() => del(index, IsdoneTask)} ischeck={false}>
+          <GoTrashcan />
+        </BtnFinish>
+      </div>
+    </Container>
   );
 }
 

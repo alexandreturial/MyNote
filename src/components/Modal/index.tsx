@@ -22,12 +22,13 @@ import {
 
 interface IModalProps{
     closemodal(): void;
+    
 };
 
 const Modal: React.FC<IModalProps> = ({closemodal}) => {
     const [title, setTitle] = useState<string>('');
     const [description, setDescription] = useState<string>('');
-
+    
     const { newTask } = useTasks();
 
     const addTask = () =>{
@@ -56,6 +57,7 @@ const Modal: React.FC<IModalProps> = ({closemodal}) => {
             <BtnDelet onClick={closemodal}>
                 <IoIosClose/>
             </BtnDelet>
+           
             <Form onSubmit={() => addTask()}>
                 <Input 
                     autoFocus 

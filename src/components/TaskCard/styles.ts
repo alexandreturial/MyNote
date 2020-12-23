@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+
+interface IBtnFinish{
+    ischeck: boolean;
+}
+
 export const Container = styled.div`
     width: 80%;
     margin: 10px auto;
@@ -38,14 +43,16 @@ export const Title = styled.div`
    
 `;
 
-export const BtnFinish = styled.button`
+export const BtnFinish = styled.button<IBtnFinish>`
     display: flex;
    
     background: none;
-    color: ${props => props.theme.colors.warning}7d;
+    color: ${props => props.ischeck ? props.theme.colors.sucess : props.theme.colors.warning}7d;
 
     font: 500 18px Roboto;
 
     right:0;
     cursor: pointer;
-`;  
+`; 
+
+

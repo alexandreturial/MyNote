@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import Modal from '../Modal';
+import Done from '../DoneTask';
+
 import { useSlider } from '../../Hooks/Slider/slider';
 
 import { 
@@ -53,7 +55,7 @@ const Footer: React.FC = () => {
         </ItemNavegation>
         {
             showModal !== false &&
-                <Modal closemodal={clickShowModal}>
+                <Modal closemodal={clickShowModal} >
                     teste
                 </Modal>
         }
