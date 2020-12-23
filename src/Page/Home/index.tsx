@@ -10,11 +10,7 @@ import { Container } from './styles';
 
 
 const Home: React.FC = () => {
-  const { deletTask, getAllTasks, getAllDoneTasks } = useTasks();
-
-
-  console.log(getAllDoneTasks());
-
+  const {getAllTasks, getAllDoneTasks } = useTasks();
   return (
     <Container>
       <SilderProvider>
