@@ -34,6 +34,7 @@ const Login: React.FC = () => {
                     <Input 
                         placeholder="nome do usuário"
                         onChange={e => setUser(e.target.value)}
+                        required
                     />
                 </div>
                 <BtnSubmit type="submit">

@@ -63,10 +63,12 @@ const Modal: React.FC<IModalProps> = ({closemodal}) => {
                     autoFocus 
                     placeholder="Task Title"
                     onChange={e => setTitle(e.target.value)}
+                    required
                 />
                 <Text 
                     placeholder="Task Description"
                     onChange={e => setDescription(e.target.value)} 
+                    required
                 />
 
                 <BtnSubmit type="submit" >
